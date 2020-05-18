@@ -10,30 +10,7 @@ int main(){
     long result;
     cout<<"Enter the Data in integer type: ";
     cin>>val;
-//static const unsigned int bits_per_byte  = CHAR_BIT; //CHAR_BIT value is 8
-//maximum number of bits in this hamming implementation is:
-//static const unsigned int max_no_bits = bits_per_byte * sizeof(long);
-//long  is 4 bytes ; 4 * 8 = 32
-/*int getMinBits(long val){
-    if(val == 0){
-        return 1;
-        }
-    else
-    for(int i = max_no_bits - 1; i>=0; i--){
-        if((val>>i) & 1){  //finding the Index of MSB; exact no of bits required is obtained
-            return i + 1;
-        }
-    }
-}
-int getMinParityBits(unsigned int k){
- //k is no of data bits
-D:\nitk\nitkprog\hamming.cppunsigned int  m = 0;
- while(pow(2, m) <= k+ m+ 1) //hamming code condition; refer text book
-    m++;
- return m;
-} //the above function gives the no of parity bits required
-//bin_val_of_idx(int k){}
-//int hamming(long val){*/
+
     unsigned int num_of_data_bits = getMinBits(val);
     unsigned int num_of_pairity_bits = getMinParityBits(num_of_data_bits);
 
@@ -71,28 +48,10 @@ for(int i = 0; i<total_bits; i++){
     cout<<hamming_arr[i]<<"  ";
 }
 
-//}
-//int main(){
-    /*long val;
-    long result;
-    cout<<"Enter the Data in integer type: ";
-    cin>>val;*/
-    //result = hamming(val); //data can never be negative in real time
-    //cout<<"The hamming encoding is: "<<result<<endl;
+
     return 0;
-//}
+
 }
-
-
-
-
-
-
-
-
-
-
-
 int getMinBits(long val){
     if(val == 0){
         return 1;
@@ -118,70 +77,3 @@ unsigned int  m = 0;
 
 
 
-
- //main func  //(7,4 === n, k)
-//    int n, k, m;
-  //  cout<<"Enter No of parity Bits: "<<endl;
-   // cin>>m; // m = n-k; for pairity bits
-   //  n  =  pow(2, m) - 1; //codeword length
-    // cout<<n<<endl; // n = 7
-    // k = pow(2, m) - m -1; //data bits length
-    // dmin = 3, t =1 t is err correcting capability
-    //encode(n, k, m);
-    //cout<<"Max size for data here is:";
-    //int maxsize_ = 8 * sizeof(long);
-    //cout<<maxsize_<<"  OUTput ";
-    //cout<<"Max size for data here is:";
-     //maxsize_ = 8 * sizeof(long);
-    //cout<<maxsize_<<"  yay ";
-
-
-/* void encode(int op, int ip, int pp){
-        bool G[ip][op];
-        bool C[op], D[ip], P[pp];
-        int i, j = 2, k = 1;
-        int pd = pp + ip;
-
-
-        cout<<"Enter Data Bits (4 bin nos): "<<endl;
-        for(int q = 0; q < ip; q++){
-             cin>>D[q];
-        }
-
-
-        for(int p = 0; p< pp; p++){
-            P[p] = 0;
-        }
-
-
-        bool parityData[pd];
-        parityData[k] = 0;
-        k = 2;
-        for(i = 2; i<= pd; i++){
-            int Y = log2(i);
-            if(Y % 2  == 0 || log2(i) == 1 ){
-                parityData[k] = P[j];
-                j++;
-                k++;
-            }
-            else{
-                parityData[k] = D[j];
-                j++;
-                k++;
-            }
-        }
-        cout<<"data Bits array: "<<endl;
-        for(int x = 0; x < ip; x++){
-            cout<<D[x]<<" ";
-        }
-
-        cout<<"Parity Bits array: "<<endl;
-        for(int y = 0; y < pp; y++){
-            cout<<P[y]<<" ";
-        }
-        cout<<"Data Parity array: "<<endl;
-        for(int z = 1; z <= pd; z++){
-            cout<<parityData[z]<<" ";
-        }
-
-}*/
