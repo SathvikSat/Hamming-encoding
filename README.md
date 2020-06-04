@@ -1,3 +1,3 @@
 # Hamming-encoding
-Intership Task
+Internship Task
 NITK - Hamming encoding - Channel Coding
