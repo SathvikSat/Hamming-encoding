@@ -1,2 +1,3 @@
 # Hamming-encoding
-NITK - Hamming encoding - Error correcting Codes
+Intership Task
+NITK - Hamming encoding - Channel Coding
